@@ -1,0 +1,187 @@
+.appartment {
+  font-family: Montserrat, sans-serif;
+
+  // .appartment__title
+
+  &__title {
+    font-size: rem(20);
+
+    @media (min-width: $sm) {
+      font-size: rem(24);
+    }
+
+    @media (min-width: $xl) {
+      font-size: rem(36);
+    }
+  }
+
+  // .appartment__info
+
+  &__info {
+    position: relative;
+    z-index: 0;
+  }
+
+  // .appartment__equipment
+
+  &__equipment {
+    margin-bottom: rem(40);
+  }
+}
+
+.info-appartment {
+  margin-bottom: rem(40);
+
+  @media (min-width: $md) {
+    display: grid;
+    grid-template-columns: 55% 1fr;
+    column-gap: rem(40);
+  }
+
+  // .info-appartment__slider
+
+  &__slider {
+    margin-bottom: rem(30);
+
+    .swiper-slide {
+      overflow: hidden;
+      border-radius: $radius;
+    }
+  }
+
+  // .info-appartment__text
+
+  &__text {
+    margin-bottom: rem(20);
+  }
+
+  // .info-appartment__title
+
+  &__title {
+    margin-bottom: rem(12);
+    font-weight: 700;
+    font-size: rem(18);
+    font-family: $secondaryFontFamily;
+
+    @media (min-width: $xl) {
+      margin-bottom: rem(25);
+      font-size: rem(24);
+    }
+  }
+
+  // .info-appartment__description
+
+  &__description {
+    margin-bottom: rem(15);
+  }
+
+  // .info-appartment__price
+
+  &__price {
+    margin-bottom: rem(10);
+    color: $primaryColor;
+    font-weight: 700;
+    font-size: rem(14);
+
+    span {
+      font-size: rem(18);
+    }
+
+    @media (min-width: $md) {
+      font-size: rem(18);
+
+      span {
+        font-size: rem(24);
+      }
+    }
+  }
+
+  // .info-appartment__address
+
+  &__address {
+    display: flex;
+    margin-bottom: rem(20);
+  }
+
+  // .info-appartment__address-icon
+
+  &__address-icon {
+    width: rem(20);
+    height: rem(20);
+    margin-right: rem(10);
+  }
+}
+
+.appartment-thumbs-slider {
+  margin-top: rem(10);
+  margin-inline: rem(50);
+
+  & .swiper-slide {
+    opacity: 0.4;
+    transition: opacity $transition;
+  }
+
+  & .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+}
+
+.equipment-appartment {
+  // .equipment-appartment__list
+
+  &__list {
+    font-size: rem(14);
+
+    @media (min-width: $sm) {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: rem(10);
+    }
+
+    @media (min-width: $md) {
+      font-size: rem(16);
+    }
+  }
+
+  // .equipment-appartment__list-item
+
+  &__list-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: rem(15);
+
+    &::before {
+      position: absolute;
+      left: 0;
+      display: block;
+      margin-top: rem(-2);
+      color: $secondaryColor;
+      font-weight: bold;
+      font-size: 22px;
+      content: '\2022';
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+
+    @media (min-width: $sm) {
+      flex: 0 1 calc(50% - rem(10));
+    }
+
+    @media (min-width: $md) {
+      flex: 0 1 calc(33% - rem(10));
+    }
+  }
+}
+
+.appartment-thumbs-wrapper {
+  position: relative;
+}
+
+.appartment-btn-next,
+.appartment-btn-prev {
+  top: calc(50% - rem(20));
+  background-color: $primaryColor;
+}

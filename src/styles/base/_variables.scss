@@ -1,0 +1,52 @@
+// Fonts, text
+$fontFamily: 'Open Sans', sans-serif;
+$secondaryFontFamily: 'Montserrat', sans-serif;
+$fontSize: rem(16);
+$fontWeight: 400;
+$lineHeight: 1.4;
+
+// Colors
+$primaryColor: #143f6b;
+$secondaryColor: #f55353;
+$black: #111;
+$white: #fff;
+$btnBgColor: #f55353;
+$btnBgColorHover: #d44747;
+$shadow: 0 0 20px 0 rgba(34, 60, 80, 20%);
+$shadowBtn: 0 10px 20px rgba(#f55353, 20%);
+$inputBorder: 1px solid rgba(17, 17, 17, 50%);
+$gray: #c4c4c4;
+
+// Others
+$radius: rem(8);
+$transition: 0.3s;
+
+// Sizes
+$minWidth: 320;
+$maxWidth: 1440;
+$maxWidthContainer: 1280; // container size
+$containerPadding: 30;
+
+// Container width
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Breakpoints
+$sm: rem(568);
+$md: rem(768);
+$lg: rem(1024);
+$xl: rem($maxWidthContainer);
+
+// Columns
+// $col-1: calc(100% / 12 * 1);
+// $col-2: calc(100% / 12 * 2);
+// $col-3: calc(100% / 12 * 3);
+$col-4: calc(100% / 12 * 4);
+$col-5: calc(100% / 12 * 5);
+$col-6: 50%;
+$col-7: calc(100% / 12 * 7);
+$col-8: calc(100% / 12 * 8);
+
+// $col-9: calc(100% / 12 * 9);
+// $col-10: calc(100% / 12 * 10);
+// $col-11: calc(100% / 12 * 11);
+// $col-12: 100%;

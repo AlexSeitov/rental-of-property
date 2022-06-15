@@ -1,0 +1,215 @@
+.appartments {
+  text-align: center;
+
+  // .appartments__title
+
+  &__title {
+    text-align: left;
+  }
+
+  // .appartments__row
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: rem(10) rem(8);
+
+    @media (min-width: $md) {
+      gap: rem(12);
+    }
+
+    @media (min-width: $xl) {
+      grid-template-columns: initial;
+      gap: rem(20);
+      text-align: initial;
+    }
+  }
+
+  // .appartments__item
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: $radius;
+    box-shadow: 0 10px 20px rgba(17, 17, 17, 10%);
+    transition: transform $transition;
+
+    @media (hover: hover) {
+      &:hover {
+        z-index: 2;
+        transform: scale(1.03);
+      }
+    }
+
+    @media (min-width: $md) {
+      // padding: rem(10);
+    }
+
+    @media (min-width: $xl) {
+      position: relative;
+      padding: 0;
+    }
+
+    @media (min-width: $xl) {
+      &:nth-child(1) {
+        grid-column: 1 / 5;
+      }
+
+      &:nth-child(2) {
+        grid-column: 5 / 8;
+      }
+
+      &:nth-child(3) {
+        grid-column: 1 / 4;
+      }
+
+      &:nth-child(4) {
+        grid-column: 4 / 8;
+      }
+    }
+  }
+
+  // .appartments__img
+
+  &__img {
+    position: relative;
+
+    // height: rem(180);
+    margin-bottom: rem(12);
+    padding-top: 80%;
+    overflow: hidden;
+    border-radius: $radius;
+
+    img {
+      position: absolute;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      inset: 0;
+    }
+
+    @media (min-width: $xl) {
+      height: rem(300);
+      margin-bottom: 0;
+      padding-top: 0;
+
+      &::after {
+        position: absolute;
+        background-color: rgba($black, 50%);
+        content: '';
+        inset: 0;
+      }
+    }
+  }
+
+  // .appartments__info
+
+  &__info {
+    @media (min-width: $xl) {
+      position: absolute;
+      right: rem(10);
+      bottom: rem(20);
+      left: rem(40);
+    }
+  }
+
+  // .appartments__btn
+
+  &__btn {
+    margin-top: rem(30);
+
+    @media (min-width: $xl) {
+      margin-top: rem(60);
+    }
+  }
+}
+
+.info-appartments {
+  padding: 0 rem(10) rem(25) rem(10);
+
+  @media (min-width: $xl) {
+    color: $white;
+  }
+
+  // .info-appartments__title
+
+  &__title {
+    margin-bottom: rem(12);
+    font-weight: 700;
+    font-size: rem(16);
+    font-family: $secondaryFontFamily;
+
+    @media (min-width: $xl) {
+      margin-bottom: rem(65);
+      font-size: rem(24);
+    }
+  }
+
+  // .info-appartments__duration
+
+  &__duration {
+    margin-bottom: rem(20);
+    font-weight: 800;
+    font-size: rem(14);
+    font-family: $secondaryFontFamily;
+
+    span {
+      font-weight: 400;
+    }
+
+    @media (min-width: $xl) {
+      font-size: rem(20);
+
+      span {
+        font-size: rem(18);
+      }
+    }
+  }
+
+  // .info-appartments__row
+
+  &__row {
+    @media (min-width: $xl) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  // .info-appartments__btn
+
+  &__btn {
+    padding: rem(10) rem(20);
+  }
+}
+
+.appartments-address {
+  display: none;
+
+  @media (min-width: $xl) {
+    display: flex;
+  }
+
+  // .appartments-address__icon
+
+  &__icon {
+    width: rem(22);
+    fill: $secondaryColor;
+
+    @media (min-width: $xl) {
+      margin-right: rem(10);
+    }
+  }
+
+  // .appartments-address__text
+
+  &__text {
+    font-family: $secondaryFontFamily;
+
+    @media (min-width: $xl) {
+      font-size: rem(18);
+    }
+  }
+}

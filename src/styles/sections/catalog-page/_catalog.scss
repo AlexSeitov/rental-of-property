@@ -1,0 +1,95 @@
+.catalog {
+  padding-top: rem(50);
+  background-color: $white;
+
+  @media (min-width: $md) {
+    padding-top: rem(60);
+  }
+
+  // .catalog__row
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: rem(40);
+
+    @media (min-width: $lg) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+
+  // .catalog__item
+
+  &__item {
+    overflow: hidden;
+    border-radius: $radius;
+    box-shadow: $shadow;
+
+    @media (hover: hover) {
+      &:hover {
+        .catalog__img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  // .catalog__img
+
+  &__img {
+    position: relative;
+    padding-top: 60%;
+    transition: transform 0.7s;
+
+    img {
+      position: absolute;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      inset: 0;
+    }
+  }
+
+  .appartments-address {
+    display: flex;
+    margin-bottom: rem(20);
+
+    &__text {
+      font-size: rem(14);
+    }
+  }
+}
+
+.info-catalog {
+  padding: rem(30) rem(10);
+
+  // .info-catalog__title
+
+  &__title {
+    margin-bottom: rem(20);
+  }
+
+  // .info-catalog__text
+
+  &__text {
+    margin-bottom: rem(20);
+    font-size: rem(14);
+
+    @media (min-width: $md) {
+      font-size: rem(16);
+    }
+  }
+
+  // .info-catalog__price
+
+  &__price {
+    margin-bottom: rem(15);
+    color: $primaryColor;
+    font-weight: 700;
+    font-family: $secondaryFontFamily;
+
+    @media (min-width: $sm) {
+      font-size: rem(18);
+    }
+  }
+}

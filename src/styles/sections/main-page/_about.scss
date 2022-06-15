@@ -1,0 +1,106 @@
+.about {
+  padding-bottom: rem(50);
+
+  @media (min-width: $lg) {
+    padding-bottom: rem(80);
+  }
+
+  // .about__row
+
+  &__row {
+    @media (min-width: $md) {
+      display: flex;
+      gap: 0 rem(24);
+      justify-content: space-between;
+    }
+
+    @media (min-width: $lg) {
+      gap: 0 rem(56);
+    }
+
+    @media (min-width: $xl) {
+      gap: 0 rem(100);
+    }
+  }
+
+  &__text {
+    margin-bottom: rem(40);
+
+    @media (min-width: $md) {
+      width: rem(278);
+    }
+
+    @media (min-width: $lg) {
+      width: $col-6;
+    }
+  }
+
+  // .about__info
+
+  &__info {
+    @media (min-width: $md) {
+      align-self: start;
+      width: $col-7;
+    }
+
+    @media (min-width: $lg) {
+      width: $col-6;
+    }
+  }
+}
+
+.info-about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(30) rem(20);
+
+  @media (min-width: $sm) {
+    justify-content: space-between;
+  }
+
+  // .info-about__item
+
+  &__item {
+    display: flex;
+  }
+
+  // .info-about__icon
+
+  &__icon {
+    width: rem(50);
+    margin-right: rem(20);
+    fill: $primaryColor;
+
+    stop {
+      stop-color: $secondaryColor;
+    }
+
+    @media (min-width: $xl) {
+      width: rem(80);
+    }
+  }
+
+  // .info-about__amount-number
+
+  &__amount-number {
+    display: block;
+    color: $primaryColor;
+    font-weight: 800;
+    font-size: rem(24);
+    font-family: $secondaryFontFamily;
+
+    @media (min-width: $xl) {
+      font-size: rem(36);
+    }
+  }
+
+  // .info-about__amount-text
+
+  &__amount-text {
+    font-size: rem(14);
+
+    @media (min-width: $xl) {
+      font-size: rem(16);
+    }
+  }
+}

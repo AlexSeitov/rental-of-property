@@ -1,0 +1,30 @@
+.btn {
+  display: inline-block;
+  padding: rem(10) rem(30);
+  color: $white;
+  font-weight: 700;
+  font-size: rem(14);
+  background: $btnBgColor;
+  border: none;
+  border-radius: rem(25);
+  outline: none;
+  box-shadow: $shadowBtn;
+  cursor: pointer;
+  transition: all $transition;
+
+  &:focus {
+    background: $btnBgColorHover;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: $btnBgColorHover;
+    }
+  }
+
+  @media (min-width: $xl) {
+    padding: rem(15) rem(30);
+    font-weight: 800;
+    font-size: rem(16);
+  }
+}
