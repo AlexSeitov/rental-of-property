@@ -167,7 +167,6 @@ export const favicons = () => {
     )
     .pipe(gulp.dest(path.build.favicons));
 };
-
 export const ttfToWoff = () => {
   return gulp
     .src(`${path.src.fonts}/*.ttf`)
@@ -186,7 +185,6 @@ export const fonts = () => {
 export const video = () => {
   return gulp.src(path.src.video).pipe(gulp.dest(path.build.video));
 };
-
 export const watchFiles = () => {
   browserSync.init({
     server: {
