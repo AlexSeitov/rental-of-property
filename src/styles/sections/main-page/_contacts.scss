@@ -41,14 +41,15 @@
 
   &__map {
     width: 100%;
+    background-image: url('../images/contacts/map.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
     iframe {
       width: 100%;
       height: rem(200);
-<<<<<<< HEAD
       border: none;
-=======
->>>>>>> 144b55f341105135e726623f2a91d8c614c7ea7a
 
       @media (min-width: $sm) {
         height: 100%;

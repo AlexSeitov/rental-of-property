@@ -32,8 +32,13 @@
 
   // .testimonials-slider__slide
 
-  &__slide {
+  &__slide.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
     padding: rem(12);
+    background-color: $white;
     border-radius: $radius;
 
     @media (min-width: $md) {
@@ -45,12 +50,92 @@
     }
   }
 
+  // &-btn.swiper-button-prev,
+  // &-btn.swiper-button-next {
+  //   @media (min-width: rem(1340)) {
+  //     position: absolute;
+  //     top: 48%;
+  //     z-index: 2;
+  //     display: block;
+  //     width: rem(40);
+  //     height: rem(40);
+  //     background-color: $secondaryColor;
+  //     border-radius: 50%;
+  //     cursor: pointer;
+  //     transition: transform $transition;
+
+  //     &::after {
+  //       position: absolute;
+  //       top: 11px;
+  //       display: inline-block;
+  //       padding: rem(8);
+  //       border: solid $white;
+  //       border-width: 0 rem(2) rem(2) 0;
+  //       content: '';
+  //     }
+  //   }
+
+  //   @media (hover: hover) {
+  //     &:hover {
+  //       transform: scale(1.2);
+  //     }
+  //   }
+  // }
+
+  // &-btn.swiper-button-prev {
+  //   left: 0;
+
+  //   &::after {
+  //     left: 14px;
+  //     transform: rotate(135deg);
+  //   }
+  // }
+
+  // &-btn.swiper-button-next {
+  //   right: 0;
+
+  //   &::after {
+  //     left: 8px;
+  //     transform: rotate(-45deg);
+  //   }
+  // }
+
+  .swiper-pagination {
+    text-align: center;
+  }
+
+  .swiper-pagination-bullet {
+    display: inline-block;
+    width: rem(20);
+    height: rem(20);
+    border: rem(2) solid $white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform $transition;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: rem(15);
+    }
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: $secondaryColor;
+    border: none;
+    opacity: 1;
+  }
+
   // .testimonials-slider__heading
 
   &__heading {
     display: flex;
     justify-content: space-between;
-    margin-bottom: rem(15);
+    margin-bottom: rem(25);
     user-select: none;
   }
 
@@ -78,19 +163,21 @@
   // .testimonials-slider__footer
 
   &__footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: auto;
     user-select: none;
   }
 
   // .testimonials-slider__author-row
 
-  &__author-row {
+  &__date-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     font-family: $secondaryFontFamily;
+    column-gap: rem(20);
+    row-gap: rem(5);
   }
 
-  &__author-name {
+  &__author {
     margin-bottom: rem(6);
     font-size: rem(14);
 
@@ -99,7 +186,7 @@
     }
   }
 
-  &__author-town,
+  &__town,
   &__date {
     font-size: rem(14);
 

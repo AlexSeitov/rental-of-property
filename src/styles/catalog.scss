@@ -1,3 +1,7 @@
+@use 'sass:math';
+@import 'base/functions';
+@import 'base/variables';
+
 .catalog {
   padding-top: rem(50);
   background-color: $white;
@@ -50,7 +54,7 @@
     }
   }
 
-  .appartments-address {
+  .apartments-address {
     display: flex;
     margin-bottom: rem(20);
 

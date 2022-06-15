@@ -6,12 +6,9 @@ import burger from './modules/burger.js';
 import moveLinkMarker from './modules/moveLinkMarker.js';
 import phoneInput from './vendor/phoneInput.js';
 import A11yDialog from 'a11y-dialog';
-import Swiper, {
-  Autoplay, Navigation, Pagination, Thumbs
-} from 'swiper';
+import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
 import 'swiper/css';
-import GLightbox from 'glightbox';
-import 'glightbox/dist/css/glightbox.css';
+import mapLoading from './modules/mapLoading.js';
 
 // Popup
 /* eslint-disable no-unused-vars */
@@ -72,30 +69,8 @@ const testimonialsSlider = new Swiper('.testimonials-slider', {
   }
 });
 
-const appartmentSlider = new Swiper('.appartment-thumbs-slider', {
-  spaceBetween: 10,
-  slidesPerView: 4,
-  freeMode: true,
-  watchSlidesProgress: true
-});
-const appartmentThumbsSlider = new Swiper('.appartment-slider', {
-  modules: [Navigation, Thumbs],
-  loop: false,
-  spaceBetween: 10,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  },
-  thumbs: {
-    swiper: appartmentSlider
-  }
-});
+// map loading ==========================================================
 
-// gLightbox ======================================================================
-
-const lightbox = GLightbox({
-  touchNavigation: true,
-  loop: true
-});
+mapLoading('map-container', 'ymap-lazy');
 
 /* eslint-enable no-unused-vars */

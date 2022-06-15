@@ -31,7 +31,8 @@
   height: rem(2);
   background-color: $black;
   transform: rotate(0deg);
-  transition: all $transition;
+  transition: $transition;
+  transition-property: background-color, transform, width;
 }
 
 .burger_active span {

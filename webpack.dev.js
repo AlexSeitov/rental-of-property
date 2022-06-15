@@ -5,10 +5,13 @@ import FileIncludeWebpackPlugin from 'file-include-webpack-plugin';
 
 export default {
   mode: 'development',
-  entry: ['./src/scripts/index.js', './src/styles/main.scss'],
+  entry: {
+    main: ['./src/scripts/index.js', './src/styles/main.scss'],
+    apartment: ['./src/scripts/apartment.js', './src/styles/apartment.scss'],
+    catalog: './src/styles/catalog.scss'
+  },
   output: {
-    filename: 'js/bundle.min.js',
-    path: path.resolve('dist')
+    filename: 'js/[name].bundle.js'
   },
   devServer: {
     static: path.resolve('src'),
@@ -54,7 +57,7 @@ export default {
 
     new MiniCssExtractPlugin({
       linkType: 'text/css',
-      filename: 'css/style.min.css'
+      filename: 'css/[name].styles.css'
     })
   ]
 };

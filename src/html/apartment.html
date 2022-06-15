@@ -2,25 +2,25 @@
 <html lang="ru">
   <head>
     @@include('./general/_head.html')
+    <link rel="stylesheet" href="css/apartment.styles.css" />
     <title>Аренда квартир</title>
   </head>
   <body id="body">
-      <div class="page-wapper">
-        @@include('./general/_header.html')
-  
-        <main>
-          @@include('./templates/apartment-page/_appartment.html')
-          @@include('./templates/main-page/_about.html')
-          @@include('./templates/main-page/_contacts.html')
-          @@include('./templates/main-page/_testimonials.html')
-          @@include('./templates/main-page/_message.html')
-        </main>
-        
-        @@include('./general/_footer.html')
-      </div>
+    <div class="page-wapper">
+      @@include('./general/_header.html')
 
-      @@include('./UI/_popup.html')
+      <main>
+        @@include('./templates/apartment-page/_apartment.html')
+        @@include('./templates/main-page/_about.html')
+        @@include('./templates/main-page/_contacts.html')
+        @@include('./templates/main-page/_testimonials.html')
+        @@include('./templates/main-page/_message.html')
+      </main>
 
-    @@include('./general/_scripts.html')
+      @@include('./general/_footer.html')
+    </div>
+
+    @@include('./UI/_popup.html') @@include('./general/_scripts.html')
+    <script src="js/apartment.bundle.js"></script>
   </body>
 </html>

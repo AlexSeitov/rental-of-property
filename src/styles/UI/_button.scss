@@ -10,7 +10,7 @@
   outline: none;
   box-shadow: $shadowBtn;
   cursor: pointer;
-  transition: all $transition;
+  transition: color $transition, background-color $transition;
 
   &:focus {
     background: $btnBgColorHover;
