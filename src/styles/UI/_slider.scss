@@ -1,0 +1,92 @@
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: auto;
+  background-color: $white;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @media (min-width: $xl) {
+    position: absolute;
+    top: 48%;
+    z-index: 2;
+    display: block;
+    width: rem(40);
+    height: rem(40);
+    background-color: $secondaryColor;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform $transition;
+
+    &::after {
+      position: absolute;
+      top: 11px;
+      left: 8px;
+      display: inline-block;
+      padding: rem(8);
+      border: solid $white;
+      border-width: 0 rem(2) rem(2) 0;
+      content: '';
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.swiper-button-prev {
+  left: 0;
+
+  &::after {
+    left: 14px;
+    transform: rotate(135deg);
+  }
+}
+
+.swiper-button-next {
+  right: 0;
+
+  &::after {
+    left: 8px;
+    transform: rotate(-45deg);
+  }
+}
+
+.swiper-pagination {
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  display: inline-block;
+  width: rem(20);
+  height: rem(20);
+  border: rem(2) solid $white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform $transition;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: rem(15);
+  }
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: $secondaryColor;
+  border: none;
+  opacity: 1;
+}

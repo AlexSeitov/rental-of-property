@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  color: $black;
+  font-weight: $fontWeight;
+  font-size: rem(16);
+  font-family: $fontFamily;
+  line-height: $lineHeight;
+
+  @media (min-width: $lg) {
+    font-weight: $fontWeight;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-size: 0;
+}
+
+.page-wapper {
+  position: relative;
+  max-width: rem($maxWidth);
+  margin-inline: auto;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: rem($containerWidth);
+  margin-inline: auto;
+  padding-inline: rem(15);
+}
+
+.section {
+  padding-top: rem(50);
+
+  @media (min-width: $md) {
+    padding-top: rem(60);
+  }
+
+  @media (min-width: $xl) {
+    padding-top: rem(80);
+  }
+}
+
+.disable-scroll {
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: rem(1279.98)) {
+    &::after {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(83, 83, 83, 48%);
+      backdrop-filter: blur(4px);
+      content: '';
+    }
+  }
+}
+
+.overlay {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    background-color: rgba($black, 60%);
+    content: '';
+    inset: 0;
+  }
+}
+
+.form-wrapper {
+  padding: rem(30) rem(20);
+  background-color: $white;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  // .form__input
+
+  &__input,
+  &__area {
+    margin-inline: auto;
+    width: 100%;
+    max-width: rem(400);
+    margin-bottom: rem(20);
+    padding: rem(10) rem(20);
+    border: $inputBorder;
+    border-radius: $radius;
+    box-shadow: none;
+
+    @media (min-width: $md) {
+      width: rem(280);
+    }
+
+    @media (min-width: $lg) {
+      width: rem(320);
+    }
+
+    &::placeholder {
+      font-size: rem(14);
+    }
+  }
+
+  &__area {
+    height: rem(120);
+    resize: none;
+  }
+
+  &__btn {
+    align-self: center;
+    width: 100%;
+    max-width: rem(320);
+    margin-top: rem(30);
+  }
+}
+
+.rating {
+  display: flex;
+
+  &__icon {
+    width: rem(16);
+  }
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  max-width: max-content;
+
+  @media (hover: hover) {
+    &:hover .social-icon {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.social-icon {
+  width: rem(30);
+  height: rem(30);
+  transition: all $transition;
+
+  @media (min-width: $md) {
+    width: rem(40);
+    height: rem(40);
+  }
+}
+
+.social-icon_mr {
+  margin-right: rem(15);
+}

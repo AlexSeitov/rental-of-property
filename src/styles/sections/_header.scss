@@ -1,0 +1,133 @@
+.header {
+  position: relative;
+  padding: rem(15) 0;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    width: 45%;
+    height: 100%;
+    background-color: $primaryColor;
+    content: '';
+
+    @media (min-width: $md) {
+      width: 56%;
+    }
+
+    @media (min-width: $lg) {
+      width: 62%;
+    }
+
+    @media (min-width: $xl) {
+      width: 52%;
+    }
+  }
+
+  // .header__row
+
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__burger {
+    margin-right: rem(20);
+  }
+
+  // .header__logo
+
+  &__logo {
+    max-width: rem(87);
+    margin-right: auto;
+
+    @media (min-width: $xl) {
+      min-width: rem(136);
+    }
+  }
+
+  // .header__nav
+
+  &__nav {
+    @media (max-width: rem(1279.98)) {
+      .nav__list {
+        margin-top: rem(75);
+        padding-left: rem(15);
+      }
+
+      // .nav__item
+
+      .nav__item {
+        background-image: url('../images/icons/border-bottom.svg');
+        background-repeat: no-repeat;
+        background-position: bottom left;
+      }
+
+      // .nav__link
+
+      .nav__link {
+        padding: rem(20) rem(50) rem(20) rem(5);
+        color: $white;
+        font-size: rem(18);
+      }
+    }
+
+    @media (min-width: $xl) {
+      margin-right: rem(52);
+    }
+  }
+
+  // .header__email
+
+  &__email {
+    margin-right: rem(20);
+
+    @media (min-width: $md) {
+      display: none;
+    }
+
+    @media (min-width: $lg) {
+      display: flex;
+    }
+  }
+
+  &__email-icon,
+  &__phone-icon {
+    fill: $primaryColor;
+
+    @media (min-width: $md) {
+      margin-right: rem(15);
+    }
+  }
+
+  &__social-link {
+    @media (hover: hover) {
+      &:hover .social-icon {
+        fill: $secondaryColor;
+      }
+    }
+  }
+
+  &__email-text,
+  &__phone-text {
+    display: none;
+    color: $white;
+
+    @media (min-width: $md) {
+      display: block;
+    }
+  }
+
+  // .header__btn
+
+  &__btn {
+    display: none;
+
+    @media (min-width: $md) {
+      display: inline-block;
+      margin-left: rem(40);
+    }
+  }
+}

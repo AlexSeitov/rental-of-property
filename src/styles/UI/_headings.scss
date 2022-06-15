@@ -1,0 +1,36 @@
+.h1,
+.h2,
+.h3,
+.h4 {
+  margin: 0;
+  font-weight: 800;
+  font-family: $secondaryFontFamily;
+}
+
+.h1 {
+  margin-bottom: rem(15);
+  font-size: rem(26);
+
+  @media (min-width: $xl) {
+    margin-bottom: rem(20);
+    font-size: rem(40);
+  }
+}
+
+.h2 {
+  margin-bottom: rem(20);
+  font-size: rem(24);
+
+  @media (min-width: $xl) {
+    margin-bottom: rem(40);
+    font-size: rem(36);
+  }
+}
+
+.h3 {
+  margin-bottom: rem(16);
+
+  @media (min-width: $xl) {
+    font-size: rem(18);
+  }
+}
