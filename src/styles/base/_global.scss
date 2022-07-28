@@ -1,3 +1,6 @@
+@use 'functions';
+@use 'variables';
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,14 +9,14 @@
 
 body {
   overflow-x: hidden;
-  color: $black;
-  font-weight: $fontWeight;
-  font-size: rem(16);
-  font-family: $fontFamily;
-  line-height: $lineHeight;
+  color: variables.$black;
+  font-weight: variables.$fontWeight;
+  font-size: functions.rem(16);
+  font-family: variables.$fontFamily;
+  line-height: variables.$lineHeight;
 
-  @media (min-width: $lg) {
-    font-weight: $fontWeight;
+  @media (min-width: variables.$lg) {
+    font-weight: variables.$fontWeight;
   }
 }
 
@@ -35,26 +38,26 @@ img {
 
 .page-wapper {
   position: relative;
-  max-width: rem($maxWidth);
+  max-width: functions.rem(variables.$maxWidth);
   margin-inline: auto;
   overflow-x: hidden;
 }
 
 .container {
-  max-width: rem($containerWidth);
+  max-width: functions.rem(variables.$containerWidth);
   margin-inline: auto;
-  padding-inline: rem(15);
+  padding-inline: functions.rem(15);
 }
 
 .section {
-  padding-top: rem(50);
+  padding-top: functions.rem(50);
 
-  @media (min-width: $md) {
-    padding-top: rem(60);
+  @media (min-width: variables.$md) {
+    padding-top: functions.rem(60);
   }
 
-  @media (min-width: $xl) {
-    padding-top: rem(80);
+  @media (min-width: variables.$xl) {
+    padding-top: functions.rem(80);
   }
 }
 
@@ -62,7 +65,7 @@ img {
   position: relative;
   overflow: hidden;
 
-  @media (max-width: rem(1279.98)) {
+  @media (max-width: functions.rem(1279.98)) {
     &::after {
       position: absolute;
       top: 0;
@@ -80,17 +83,17 @@ img {
 
   &::after {
     position: absolute;
-    background-color: rgba($black, 60%);
+    background-color: rgba(variables.$black, 60%);
     content: '';
     inset: 0;
   }
 }
 
 .form-wrapper {
-  padding: rem(30) rem(20);
-  background-color: $white;
-  border-radius: $radius;
-  box-shadow: $shadow;
+  padding: functions.rem(30) functions.rem(20);
+  background-color: variables.$white;
+  border-radius: variables.$radius;
+  box-shadow: variables.$shadow;
 }
 
 .form {
@@ -103,46 +106,46 @@ img {
   &__area {
     margin-inline: auto;
     width: 100%;
-    max-width: rem(400);
-    margin-bottom: rem(20);
-    padding: rem(10) rem(20);
-    border: $inputBorder;
-    border-radius: $radius;
+    max-width: functions.rem(400);
+    margin-bottom: functions.rem(20);
+    padding: functions.rem(10) functions.rem(20);
+    border: variables.$inputBorder;
+    border-radius: variables.$radius;
     box-shadow: none;
 
-    @media (min-width: $md) {
-      width: rem(280);
+    @media (min-width: variables.$md) {
+      width: functions.rem(280);
     }
 
-    @media (min-width: $lg) {
-      width: rem(320);
+    @media (min-width: variables.$lg) {
+      width: functions.rem(320);
     }
 
     &::placeholder {
-      font-size: rem(14);
+      font-size: functions.rem(14);
     }
   }
 
   &__area {
-    height: rem(120);
+    height: functions.rem(120);
     resize: none;
   }
 
   &__btn {
     align-self: center;
     width: 100%;
-    max-width: rem(320);
-    margin-top: rem(30);
+    max-width: functions.rem(320);
+    margin-top: functions.rem(30);
   }
 }
 
 .rating {
   display: flex;
-  gap: rem(4);
+  gap: functions.rem(4);
 
   &__icon {
-    width: rem(20);
-    height: rem(20);
+    width: functions.rem(20);
+    height: functions.rem(20);
   }
 }
 
@@ -159,16 +162,16 @@ img {
 }
 
 .social-icon {
-  width: rem(30);
-  height: rem(30);
-  transition: transform $transition;
+  width: functions.rem(30);
+  height: functions.rem(30);
+  transition: transform variables.$transition;
 
-  @media (min-width: $md) {
-    width: rem(40);
-    height: rem(40);
+  @media (min-width: variables.$md) {
+    width: functions.rem(40);
+    height: functions.rem(40);
   }
 }
 
 .social-icon_mr {
-  margin-right: rem(15);
+  margin-right: functions.rem(15);
 }

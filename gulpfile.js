@@ -22,7 +22,7 @@ import ttf2woff2 from 'gulp-ttf2woff2';
 import del from 'del';
 import gulpif from 'gulp-if';
 import { htmlValidator } from 'gulp-w3c-html-validator';
-import replace from 'gulp-replace';
+import { existsSync } from 'fs';
 
 const sass = gulpSass(dartSass);
 
@@ -38,13 +38,14 @@ const paths = {
     css: sourceFolder + 'styles/*.scss',
     js: sourceFolder + 'scripts/index.js',
     gifs: sourceFolder + 'images/**/*.gif',
-    imagesToWebp: sourceFolder + 'images/**/*.{jpg,jpeg}',
+    images: sourceFolder + 'images/**/*.{webp,jpg,jpeg}',
+    webp: sourceFolder + 'images/',
     imagesPng: sourceFolder + 'images/**/*.png',
     svg: sourceFolder + 'images/**/*.svg',
     favicon: sourceFolder + 'images/favicon.svg',
-    fonts: sourceFolder + 'fonts/*',
+    fonts: sourceFolder + 'fonts',
     woffFonts: sourceFolder + 'fonts/*.woff2',
-    video: sourceFolder + 'video/*'
+    video: sourceFolder + 'video'
   },
   build: {
     css: buildFolder + 'css',
@@ -52,7 +53,7 @@ const paths = {
     images: buildFolder + 'images',
     favicons: buildFolder + 'favicons',
     fonts: buildFolder + 'fonts',
-    video: buildFolder + 'video'
+    video: buildFolder
   },
   watch: {
     html: sourceFolder + '**/*.html',
@@ -67,13 +68,14 @@ export const html = () => {
   return gulp
     .src(paths.src.html)
     .pipe(fileinclude({ prefix: '@@' }))
-    .pipe(replace(/\.jpg/g, '.webp'))
-    .pipe(htmlbeautify({ indent_size: 2 }))
     .pipe(
       htmlmin({
+        collapseWhitespace: true,
+        preserveLineBreaks: true,
         removeComments: true
       })
     )
+    .pipe(htmlbeautify({ indent_size: 2 }))
     .pipe(gulp.dest(buildFolder))
     .pipe(browserSync.stream());
 };
@@ -98,7 +100,6 @@ export const styles = () => {
         str.basename += '.styles';
       })
     )
-    .pipe(replace(/\.jpg/g, '.webp'))
     .pipe(gulpif(isBuild, cleanCSS()))
     .pipe(gulpif(isDev, sourcemaps.write('.')))
     .pipe(gulp.dest(paths.build.css))
@@ -127,10 +128,17 @@ export const gifs = () => {
 
 export const imagesToWebp = () => {
   return gulp
-    .src(paths.src.imagesToWebp)
+    .src(paths.src.images)
+    .pipe(newer(paths.src.images))
+    .pipe(webp())
+    .pipe(gulp.dest(paths.src.webp));
+};
+
+export const images = () => {
+  return gulp
+    .src(paths.src.images)
     .pipe(newer(paths.build.images))
     .pipe(imagemin([mozjpeg({ quality: 75, progressive: true })]))
-    .pipe(webp())
     .pipe(gulp.dest(paths.build.images));
 };
 
@@ -187,8 +195,11 @@ export const fonts = () => {
   return gulp.src(paths.src.woffFonts).pipe(gulp.dest(paths.build.fonts));
 };
 
-export const video = () => {
-  return gulp.src(paths.src.video).pipe(gulp.dest(paths.build.video));
+export const video = (done) => {
+  if (existsSync(paths.src.video)) {
+    return gulp.src(paths.src.video).pipe(gulp.dest(paths.build.video));
+  }
+  return done();
 };
 
 export const watchFiles = () => {
@@ -214,7 +225,7 @@ export const removeMap = () => {
   return del(paths.cleanMap);
 };
 
-export const startDev = gulp.series(ttfToWoff, ttfRemove);
+export const dev = gulp.series(ttfToWoff, ttfRemove, imagesToWebp);
 
 export const build = gulp.series(
   removeDist,
@@ -225,6 +236,7 @@ export const build = gulp.series(
     favicons,
     gifs,
     imagesToWebp,
+    images,
     imagesPng,
     svg,
     fonts,
@@ -233,8 +245,7 @@ export const build = gulp.series(
   removeMap
 );
 
-const dev = gulp.series(
-  removeDist,
+export const start = gulp.series(
   gulp.parallel(
     html,
     styles,
@@ -242,13 +253,11 @@ const dev = gulp.series(
     favicons,
     gifs,
     imagesToWebp,
+    images,
     imagesPng,
     svg,
     fonts,
     video,
     watchFiles
-  ),
-  htmlValidation
+  )
 );
-
-export default dev;

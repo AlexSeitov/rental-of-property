@@ -5,8 +5,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "gulp startDev && webpack serve --config ./webpack.dev.js",
-    "devBuild": "gulp",
+    "dev": "gulp startDev && webpack serve --config ./webpack.dev.js",
+    "start": "gulp",
     "build": "gulp build --build",
     "htmlhint": "npx htmlhint ./src/html/*",
     "htmlValidation": "gulp htmlValidation",
@@ -19,7 +19,8 @@
     "prepare": "npx husky-init && husky install"
   },
   "browserslist": [
-    "last 3 versions",
+    "last 2 years",
+    "> 1%",
     "not dead",
     "not ie 11"
   ],

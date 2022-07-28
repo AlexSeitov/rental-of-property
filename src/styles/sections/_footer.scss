@@ -1,16 +1,19 @@
+@use '../base/functions';
+@use '../base/variables';
+
 .footer {
-  padding: rem(15) 0;
-  background-color: $primaryColor;
+  padding: functions.rem(15) 0;
+  background-color: variables.$primaryColor;
 
   &.overlay::after {
     display: none;
 
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       display: block;
     }
   }
 
-  @media (min-width: $md) {
+  @media (min-width: variables.$md) {
     position: relative;
     background: url('../images/footer/footer-bg.jpg');
     background-repeat: no-repeat;
@@ -20,7 +23,7 @@
     .container {
       position: relative;
       z-index: 2;
-      padding-top: rem(200);
+      padding-top: functions.rem(200);
     }
   }
 
@@ -31,18 +34,18 @@
     align-items: center;
     justify-content: space-between;
 
-    @media (min-width: $md) {
-      padding-bottom: rem(20);
+    @media (min-width: variables.$md) {
+      padding-bottom: functions.rem(20);
     }
   }
 
   // .footer__logo
 
   &__logo {
-    width: rem(106);
+    width: functions.rem(106);
 
-    @media (min-width: $xl) {
-      width: rem(150);
+    @media (min-width: variables.$xl) {
+      width: functions.rem(150);
     }
   }
 
@@ -51,9 +54,9 @@
   &__nav {
     display: none;
 
-    @media (min-width: $xl) {
+    @media (min-width: variables.$xl) {
       display: block;
-      color: $white;
+      color: variables.$white;
     }
   }
 
@@ -64,32 +67,32 @@
   &__email {
     display: none;
 
-    @media (min-width: $sm) {
+    @media (min-width: variables.$sm) {
       display: flex;
     }
   }
 
   &__social-link {
     &:not(:last-child) {
-      margin-right: rem(12);
+      margin-right: functions.rem(12);
 
-      @media (min-width: $sm) {
-        margin-right: rem(15);
+      @media (min-width: variables.$sm) {
+        margin-right: functions.rem(15);
       }
     }
   }
 
   &__social-icon {
-    fill: $primaryColor;
+    fill: variables.$primaryColor;
   }
 
   &__social-text {
     display: none;
 
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       display: initial;
-      margin-left: rem(15);
-      color: $white;
+      margin-left: functions.rem(15);
+      color: variables.$white;
     }
   }
 
@@ -97,13 +100,13 @@
 
   &__copyright {
     display: none;
-    padding-top: rem(20);
-    color: $white;
+    padding-top: functions.rem(20);
+    color: variables.$white;
 
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       display: block;
       text-align: center;
-      border-top: 1px solid $gray;
+      border-top: 1px solid variables.$gray;
     }
   }
 }

@@ -1,7 +1,9 @@
+@use 'functions';
+
 // Fonts, text
 $fontFamily: 'Open Sans', sans-serif;
 $secondaryFontFamily: 'Montserrat', sans-serif;
-$fontSize: rem(16);
+$fontSize: functions.rem(16);
 $fontWeight: 400;
 $lineHeight: 1.4;
 
@@ -18,7 +20,7 @@ $inputBorder: 1px solid rgba(17, 17, 17, 50%);
 $gray: #c4c4c4;
 
 // Others
-$radius: rem(8);
+$radius: functions.rem(8);
 $transition: 0.3s;
 
 // Sizes
@@ -31,10 +33,10 @@ $containerPadding: 30;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Breakpoints
-$sm: rem(568);
-$md: rem(768);
-$lg: rem(1024);
-$xl: rem($maxWidthContainer);
+$sm: functions.rem(568);
+$md: functions.rem(768);
+$lg: functions.rem(1024);
+$xl: functions.rem($maxWidthContainer);
 
 // Columns
 // $col-1: calc(100% / 12 * 1);

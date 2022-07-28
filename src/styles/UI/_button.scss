@@ -1,30 +1,35 @@
+@use '../base/functions';
+@use '../base/variables';
+
 .btn {
   display: inline-block;
-  padding: rem(10) rem(30);
-  color: $white;
+  padding: functions.rem(10) functions.rem(30);
+  color: variables.$white;
   font-weight: 700;
-  font-size: rem(14);
-  background: $btnBgColor;
+  font-size: functions.rem(14);
+  background: variables.$btnBgColor;
   border: none;
-  border-radius: rem(25);
+  border-radius: functions.rem(25);
   outline: none;
-  box-shadow: $shadowBtn;
+  box-shadow: variables.$shadowBtn;
   cursor: pointer;
-  transition: color $transition, background-color $transition;
+  transition:
+    color variables.$transition,
+    background-color variables.$transition;
 
   &:focus {
-    background: $btnBgColorHover;
+    background: variables.$btnBgColorHover;
   }
 
   @media (hover: hover) {
     &:hover {
-      background: $btnBgColorHover;
+      background: variables.$btnBgColorHover;
     }
   }
 
-  @media (min-width: $xl) {
-    padding: rem(15) rem(30);
+  @media (min-width: variables.$xl) {
+    padding: functions.rem(15) functions.rem(30);
     font-weight: 800;
-    font-size: rem(16);
+    font-size: functions.rem(16);
   }
 }

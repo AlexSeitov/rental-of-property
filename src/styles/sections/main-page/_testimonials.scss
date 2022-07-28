@@ -1,13 +1,16 @@
-.testimonials {
-  padding-bottom: rem(50);
-  background-color: $primaryColor;
+@use '../../base/functions';
+@use '../../base/variables';
 
-  @media (min-width: $md) {
-    padding-bottom: rem(60);
+.testimonials {
+  padding-bottom: functions.rem(50);
+  background-color: variables.$primaryColor;
+
+  @media (min-width: variables.$md) {
+    padding-bottom: functions.rem(60);
   }
 
-  @media (min-width: $xl) {
-    padding-bottom: rem(80);
+  @media (min-width: variables.$xl) {
+    padding-bottom: functions.rem(80);
   }
 
   .container {
@@ -17,7 +20,7 @@
   // .testimonials__title
 
   &__title {
-    color: $white;
+    color: variables.$white;
   }
 
   // .testimonials__author-name
@@ -27,7 +30,7 @@
   // .testimonials-slider__wrapper
 
   &__wrapper {
-    margin-bottom: rem(40);
+    margin-bottom: functions.rem(40);
   }
 
   // .testimonials-slider__slide
@@ -37,16 +40,16 @@
     flex-direction: column;
     justify-content: space-between;
     height: auto;
-    padding: rem(12);
-    background-color: $white;
-    border-radius: $radius;
+    padding: functions.rem(12);
+    background-color: variables.$white;
+    border-radius: variables.$radius;
 
-    @media (min-width: $md) {
-      padding: rem(20);
+    @media (min-width: variables.$md) {
+      padding: functions.rem(20);
     }
 
-    @media (min-width: $xl) {
-      padding: rem(30);
+    @media (min-width: variables.$xl) {
+      padding: functions.rem(30);
     }
   }
 
@@ -106,12 +109,12 @@
 
   .swiper-pagination-bullet {
     display: inline-block;
-    width: rem(20);
-    height: rem(20);
-    border: rem(2) solid $white;
+    width: functions.rem(20);
+    height: functions.rem(20);
+    border: functions.rem(2) solid variables.$white;
     border-radius: 50%;
     cursor: pointer;
-    transition: transform $transition;
+    transition: transform variables.$transition;
 
     @media (hover: hover) {
       &:hover {
@@ -120,12 +123,12 @@
     }
 
     &:not(:last-child) {
-      margin-right: rem(15);
+      margin-right: functions.rem(15);
     }
   }
 
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background: $secondaryColor;
+    background: variables.$secondaryColor;
     border: none;
     opacity: 1;
   }
@@ -135,7 +138,7 @@
   &__heading {
     display: flex;
     justify-content: space-between;
-    margin-bottom: rem(25);
+    margin-bottom: functions.rem(25);
     user-select: none;
   }
 
@@ -144,19 +147,19 @@
   &__heading-title {
     font-weight: 800;
 
-    @media (min-width: $md) {
-      font-size: rem(18);
+    @media (min-width: variables.$md) {
+      font-size: functions.rem(18);
     }
 
-    @media (min-width: $xl) {
-      font-size: rem(20);
+    @media (min-width: variables.$xl) {
+      font-size: functions.rem(20);
     }
   }
 
   // .testimonials-slider__text
 
   &__text {
-    margin-bottom: rem(25);
+    margin-bottom: functions.rem(25);
     user-select: none;
   }
 
@@ -172,26 +175,26 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-family: $secondaryFontFamily;
-    column-gap: rem(20);
-    row-gap: rem(5);
+    font-family: variables.$secondaryFontFamily;
+    column-gap: functions.rem(20);
+    row-gap: functions.rem(5);
   }
 
   &__author {
-    margin-bottom: rem(6);
-    font-size: rem(14);
+    margin-bottom: functions.rem(6);
+    font-size: functions.rem(14);
 
-    @media (min-width: $xl) {
-      font-size: rem(16);
+    @media (min-width: variables.$xl) {
+      font-size: functions.rem(16);
     }
   }
 
   &__town,
   &__date {
-    font-size: rem(14);
+    font-size: functions.rem(14);
 
-    @media (min-width: $md) {
-      font-size: rem(16);
+    @media (min-width: variables.$md) {
+      font-size: functions.rem(16);
     }
   }
 

@@ -1,50 +1,53 @@
-.about {
-  padding-bottom: rem(50);
+@use '../../base/functions';
+@use '../../base/variables';
 
-  @media (min-width: $lg) {
-    padding-bottom: rem(80);
+.about {
+  padding-bottom: functions.rem(50);
+
+  @media (min-width: variables.$lg) {
+    padding-bottom: functions.rem(80);
   }
 
   // .about__row
 
   &__row {
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       display: flex;
-      gap: 0 rem(24);
+      gap: 0 functions.rem(24);
       justify-content: space-between;
     }
 
-    @media (min-width: $lg) {
-      gap: 0 rem(56);
+    @media (min-width: variables.$lg) {
+      gap: 0 functions.rem(56);
     }
 
-    @media (min-width: $xl) {
-      gap: 0 rem(100);
+    @media (min-width: variables.$xl) {
+      gap: 0 functions.rem(100);
     }
   }
 
   &__text {
-    margin-bottom: rem(40);
+    margin-bottom: functions.rem(40);
 
-    @media (min-width: $md) {
-      width: rem(278);
+    @media (min-width: variables.$md) {
+      width: functions.rem(278);
     }
 
-    @media (min-width: $lg) {
-      width: $col-6;
+    @media (min-width: variables.$lg) {
+      width: variables.$col-6;
     }
   }
 
   // .about__info
 
   &__info {
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       align-self: start;
-      width: $col-7;
+      width: variables.$col-7;
     }
 
-    @media (min-width: $lg) {
-      width: $col-6;
+    @media (min-width: variables.$lg) {
+      width: variables.$col-6;
     }
   }
 }
@@ -52,9 +55,9 @@
 .info-about {
   display: flex;
   flex-wrap: wrap;
-  gap: rem(30) rem(20);
+  gap: functions.rem(30) functions.rem(20);
 
-  @media (min-width: $sm) {
+  @media (min-width: variables.$sm) {
     justify-content: space-between;
   }
 
@@ -67,16 +70,16 @@
   // .info-about__icon
 
   &__icon {
-    width: rem(50);
-    margin-right: rem(20);
-    fill: $primaryColor;
+    width: functions.rem(50);
+    margin-right: functions.rem(20);
+    fill: variables.$primaryColor;
 
     stop {
-      stop-color: $secondaryColor;
+      stop-color: variables.$secondaryColor;
     }
 
-    @media (min-width: $xl) {
-      width: rem(80);
+    @media (min-width: variables.$xl) {
+      width: functions.rem(80);
     }
   }
 
@@ -84,23 +87,23 @@
 
   &__amount-number {
     display: block;
-    color: $primaryColor;
+    color: variables.$primaryColor;
     font-weight: 800;
-    font-size: rem(24);
-    font-family: $secondaryFontFamily;
+    font-size: functions.rem(24);
+    font-family: variables.$secondaryFontFamily;
 
-    @media (min-width: $xl) {
-      font-size: rem(36);
+    @media (min-width: variables.$xl) {
+      font-size: functions.rem(36);
     }
   }
 
   // .info-about__amount-text
 
   &__amount-text {
-    font-size: rem(14);
+    font-size: functions.rem(14);
 
-    @media (min-width: $xl) {
-      font-size: rem(16);
+    @media (min-width: variables.$xl) {
+      font-size: functions.rem(16);
     }
   }
 }

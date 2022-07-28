@@ -1,24 +1,27 @@
+@use '../base/functions';
+@use '../base/variables';
+
 .swiper-button-prev,
 .swiper-button-next {
-  @media (min-width: rem(1340)) {
+  @media (min-width: functions.rem(1340)) {
     position: absolute;
     top: 48%;
     z-index: 2;
     display: block;
-    width: rem(40);
-    height: rem(40);
-    background-color: $secondaryColor;
+    width: functions.rem(40);
+    height: functions.rem(40);
+    background-color: variables.$secondaryColor;
     border-radius: 50%;
     cursor: pointer;
-    transition: transform $transition;
+    transition: transform variables.$transition;
 
     &::after {
       position: absolute;
       top: 11px;
       display: inline-block;
-      padding: rem(8);
-      border: solid $white;
-      border-width: 0 rem(2) rem(2) 0;
+      padding: functions.rem(8);
+      border: solid variables.$white;
+      border-width: 0 functions.rem(2) functions.rem(2) 0;
       content: '';
     }
   }

@@ -1,3 +1,6 @@
+@use '../base/functions';
+@use '../base/variables';
+
 /* stylelint-disable no-duplicate-selectors */
 [data-a11y-dialog-native] .dialog-overlay {
   display: none;
@@ -27,28 +30,28 @@
 }
 
 .dialog-title {
-  margin-bottom: rem(10);
+  margin-bottom: functions.rem(10);
 }
 
 .dialog-text {
-  max-width: rem(370);
-  margin-bottom: rem(30);
+  max-width: functions.rem(370);
+  margin-bottom: functions.rem(30);
   margin-inline: auto;
 }
 
 .dialog-content {
   position: relative;
   z-index: 2;
-  width: rem(420);
+  width: functions.rem(420);
   max-width: 90%;
   margin: auto;
-  padding: rem(40) rem(20);
-  background-color: $white;
-  border-radius: $radius;
+  padding: functions.rem(40) functions.rem(20);
+  background-color: variables.$white;
+  border-radius: variables.$radius;
   animation: fade-in 400ms 200ms both, slide-up 400ms 200ms both;
 
-  @media (min-width: $sm) {
-    padding: rem(40);
+  @media (min-width: variables.$sm) {
+    padding: functions.rem(40);
   }
 }
 
@@ -66,21 +69,21 @@
 
 .dialog-close {
   position: absolute;
-  top: rem(10);
-  right: rem(10);
-  width: rem(20);
-  height: rem(20);
+  top: functions.rem(10);
+  right: functions.rem(10);
+  width: functions.rem(20);
+  height: functions.rem(20);
   text-align: center;
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
 
-  @media (min-width: $md) {
-    top: rem(15);
-    right: rem(15);
-    width: rem(30);
-    height: rem(30);
+  @media (min-width: variables.$md) {
+    top: functions.rem(15);
+    right: functions.rem(15);
+    width: functions.rem(30);
+    height: functions.rem(30);
   }
 
   &::after,
@@ -88,9 +91,9 @@
     position: absolute;
     display: block;
     width: 100%;
-    height: rem(2);
+    height: functions.rem(2);
     background-color: #bcbcbc;
-    transition: all $transition;
+    transition: all variables.$transition;
     content: '';
   }
 
@@ -105,7 +108,7 @@
   &:focus {
     &::after,
     &::before {
-      background-color: $black;
+      background-color: variables.$black;
     }
   }
 
@@ -113,7 +116,7 @@
     &:hover {
       &::after,
       &::before {
-        background-color: $black;
+        background-color: variables.$black;
       }
     }
   }
@@ -121,7 +124,7 @@
 
 .dialog {
   .form__input {
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       width: 100%;
     }
   }

@@ -1,22 +1,25 @@
+@use '../../base/functions';
+@use '../../base/variables';
+
 .message {
   &__title {
     text-align: center;
   }
 
   &__row {
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       position: relative;
     }
   }
 
   &__form-wrapper {
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       position: absolute;
-      top: rem(30);
+      top: functions.rem(30);
       z-index: 5;
     }
 
-    @media (min-width: $xl) {
+    @media (min-width: variables.$xl) {
       top: 0;
     }
   }
@@ -26,11 +29,11 @@
   &__info {
     display: none;
 
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       display: block;
-      width: $col-7;
+      width: variables.$col-7;
       margin-left: auto;
-      padding: rem(70) rem(50);
+      padding: functions.rem(70) functions.rem(50);
 
       // background-image: url('../images/icons/quotes.svg');
       // background-repeat: no-repeat;
@@ -43,27 +46,27 @@
   // .message__info-text
 
   &__info-text {
-    @media (min-width: $md) {
-      margin-bottom: rem(30);
+    @media (min-width: variables.$md) {
+      margin-bottom: functions.rem(30);
     }
 
-    @media (min-width: $lg) {
-      margin-bottom: rem(60);
+    @media (min-width: variables.$lg) {
+      margin-bottom: functions.rem(60);
     }
   }
 
   // .message__info-author
 
   &__info-author {
-    margin-bottom: rem(10);
-    color: $primaryColor;
+    margin-bottom: functions.rem(10);
+    color: variables.$primaryColor;
     font-weight: 700;
-    font-family: $secondaryFontFamily;
+    font-family: variables.$secondaryFontFamily;
   }
 
   // .message__info-author-position
 
   &__info-author-position {
-    font-family: $secondaryFontFamily;
+    font-family: variables.$secondaryFontFamily;
   }
 }

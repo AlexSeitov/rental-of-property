@@ -1,17 +1,20 @@
+@use '../../base/functions';
+@use '../../base/variables';
+
 .main-block {
   position: relative;
-  padding: rem(60) 0;
-  color: $white;
+  padding: functions.rem(60) 0;
+  color: variables.$white;
   text-align: center;
 
-  @media (min-width: $md) {
+  @media (min-width: variables.$md) {
     padding: 0;
-    color: $black;
+    color: variables.$black;
     text-align: initial;
   }
 
   &__row {
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       display: flex;
     }
   }
@@ -19,43 +22,43 @@
   // .main-block__heading
 
   &__heading {
-    @media (min-width: $md) {
-      width: $col-4;
-      padding-top: rem(24);
+    @media (min-width: variables.$md) {
+      width: variables.$col-4;
+      padding-top: functions.rem(24);
     }
 
-    @media (min-width: $xl) {
-      padding-top: rem(80);
+    @media (min-width: variables.$xl) {
+      padding-top: functions.rem(80);
     }
   }
 
   // .main-block__subtitle
 
   &__subtitle {
-    margin-bottom: rem(20);
-    font-size: rem(20);
-    font-family: $secondaryFontFamily;
+    margin-bottom: functions.rem(20);
+    font-size: functions.rem(20);
+    font-family: variables.$secondaryFontFamily;
 
-    @media (min-width: $md) {
-      margin-bottom: rem(30);
+    @media (min-width: variables.$md) {
+      margin-bottom: functions.rem(30);
     }
 
-    @media (min-width: $xl) {
-      font-size: rem(26);
+    @media (min-width: variables.$xl) {
+      font-size: functions.rem(26);
     }
   }
 
   // .main-block__img
 
   &__img {
-    @media (max-width: rem(767.98)) {
+    @media (max-width: functions.rem(767.98)) {
       position: absolute;
       z-index: -1;
       inset: 0;
 
       &::after {
         position: absolute;
-        background-color: rgba($black, 50%);
+        background-color: rgba(variables.$black, 50%);
         content: '';
         inset: 0;
       }
@@ -68,17 +71,17 @@
       object-fit: cover;
     }
 
-    @media (min-width: $md) {
-      right: rem(-15);
-      width: $col-8;
-      height: rem(260);
+    @media (min-width: variables.$md) {
+      right: functions.rem(-15);
+      width: variables.$col-8;
+      height: functions.rem(260);
       overflow: hidden;
       border-radius: 10px 0 0 10px;
     }
 
-    @media (min-width: $xl) {
-      right: rem(-84);
-      height: rem(470);
+    @media (min-width: variables.$xl) {
+      right: functions.rem(-84);
+      height: functions.rem(470);
     }
   }
 }
