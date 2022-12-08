@@ -1,5 +1,5 @@
-@use '../base/functions';
-@use '../base/variables';
+@use '../base/functions' as *;
+@use '../base/variables' as *;
 
 .nav {
   // .nav__list
@@ -7,7 +7,7 @@
   &__list {
     position: relative;
 
-    @media (min-width: variables.$xl) {
+    @media (min-width: $xl) {
       display: flex;
     }
   }
@@ -16,29 +16,30 @@
 
   &__link {
     display: inline-block;
-    padding: functions.rem(15) 0;
+    padding: rem(15) 0;
     font-weight: 600;
-    font-size: functions.rem(16);
-    font-family: variables.$secondaryFontFamily;
+    font-size: rem(16);
+    font-family: $secondaryFontFamily;
 
-    @media (min-width: variables.$xl) {
-      padding: functions.rem(15);
+    @media (min-width: $xl) {
+      padding: rem(15);
     }
   }
 }
 
 .header {
   &__nav {
-    @media (max-width: functions.rem(1279.98)) {
+    @media (max-width: rem(1279.98)) {
       position: fixed;
+      top: 0;
       bottom: 0;
       left: 0;
       z-index: 2;
       display: none;
       width: 50%;
       height: 100%;
-      background-color: variables.$primaryColor;
-      transition: transform variables.$transition;
+      background-color: $primaryColor;
+      transition: transform $transition;
 
       &.nav_active {
         display: block;
@@ -48,7 +49,7 @@
 }
 
 .link-marker {
-  @media (min-width: variables.$xl) {
+  @media (min-width: $xl) {
     position: absolute;
     bottom: 0;
     z-index: 1;
@@ -56,7 +57,7 @@
 
     &::after {
       position: absolute;
-      bottom: functions.rem(12);
+      bottom: rem(12);
       left: 50%;
       width: calc(100% - 40px);
       height: 2px;
@@ -68,9 +69,9 @@
 }
 
 .footer__nav .link-marker {
-  @media (min-width: variables.$xl) {
+  @media (min-width: $xl) {
     &::after {
-      background-color: variables.$white;
+      background-color: $white;
     }
   }
 }

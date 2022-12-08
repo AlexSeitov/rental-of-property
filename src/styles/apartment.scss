@@ -117,8 +117,7 @@
 }
 
 .apartment-thumbs-slider.swiper {
-  margin-top: rem(10);
-  margin-inline: rem(50);
+  margin: rem(10) rem(50) 0;
 
   .swiper-slide {
     opacity: 0.4;
@@ -134,13 +133,10 @@
   // .equipment-apartment__list
 
   &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(10);
     font-size: rem(14);
-
-    @media (min-width: $sm) {
-      display: flex;
-      flex-wrap: wrap;
-      column-gap: rem(10);
-    }
 
     @media (min-width: $md) {
       font-size: rem(16);

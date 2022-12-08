@@ -1,65 +1,41 @@
-@use '../../base/functions';
-@use '../../base/variables';
+@use '../../base/functions' as *;
+@use '../../base/variables' as *;
 
 .about {
-  padding-bottom: functions.rem(50);
+  padding-bottom: rem(50);
 
-  @media (min-width: variables.$lg) {
-    padding-bottom: functions.rem(80);
+  @media (min-width: $lg) {
+    padding-bottom: rem(80);
   }
 
   // .about__row
 
   &__row {
-    @media (min-width: variables.$md) {
-      display: flex;
-      gap: 0 functions.rem(24);
-      justify-content: space-between;
+    @media (min-width: $md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: rem(24);
     }
 
-    @media (min-width: variables.$lg) {
-      gap: 0 functions.rem(56);
+    @media (min-width: $lg) {
+      gap: 0 rem(56);
     }
 
-    @media (min-width: variables.$xl) {
-      gap: 0 functions.rem(100);
+    @media (min-width: $xl) {
+      gap: 0 rem(100);
     }
   }
 
   &__text {
-    margin-bottom: functions.rem(40);
-
-    @media (min-width: variables.$md) {
-      width: functions.rem(278);
-    }
-
-    @media (min-width: variables.$lg) {
-      width: variables.$col-6;
-    }
-  }
-
-  // .about__info
-
-  &__info {
-    @media (min-width: variables.$md) {
-      align-self: start;
-      width: variables.$col-7;
-    }
-
-    @media (min-width: variables.$lg) {
-      width: variables.$col-6;
-    }
+    max-width: rem(500);
+    margin-bottom: rem(40);
   }
 }
 
 .info-about {
-  display: flex;
-  flex-wrap: wrap;
-  gap: functions.rem(30) functions.rem(20);
-
-  @media (min-width: variables.$sm) {
-    justify-content: space-between;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: rem(20);
 
   // .info-about__item
 
@@ -70,16 +46,16 @@
   // .info-about__icon
 
   &__icon {
-    width: functions.rem(50);
-    margin-right: functions.rem(20);
-    fill: variables.$primaryColor;
+    width: rem(50);
+    margin-right: rem(20);
+    fill: $primaryColor;
 
     stop {
-      stop-color: variables.$secondaryColor;
+      stop-color: $secondaryColor;
     }
 
-    @media (min-width: variables.$xl) {
-      width: functions.rem(80);
+    @media (min-width: $xl) {
+      width: rem(80);
     }
   }
 
@@ -87,23 +63,23 @@
 
   &__amount-number {
     display: block;
-    color: variables.$primaryColor;
+    color: $primaryColor;
     font-weight: 800;
-    font-size: functions.rem(24);
-    font-family: variables.$secondaryFontFamily;
+    font-size: rem(24);
+    font-family: $secondaryFontFamily;
 
-    @media (min-width: variables.$xl) {
-      font-size: functions.rem(36);
+    @media (min-width: $xl) {
+      font-size: rem(36);
     }
   }
 
   // .info-about__amount-text
 
   &__amount-text {
-    font-size: functions.rem(14);
+    font-size: rem(14);
 
-    @media (min-width: variables.$xl) {
-      font-size: functions.rem(16);
+    @media (min-width: $xl) {
+      font-size: rem(16);
     }
   }
 }

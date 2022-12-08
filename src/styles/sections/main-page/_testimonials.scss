@@ -1,16 +1,16 @@
-@use '../../base/functions';
-@use '../../base/variables';
+@use '../../base/functions' as *;
+@use '../../base/variables' as *;
 
 .testimonials {
-  padding-bottom: functions.rem(50);
-  background-color: variables.$primaryColor;
+  padding-bottom: rem(50);
+  background-color: $primaryColor;
 
-  @media (min-width: variables.$md) {
-    padding-bottom: functions.rem(60);
+  @media (min-width: $md) {
+    padding-bottom: rem(60);
   }
 
-  @media (min-width: variables.$xl) {
-    padding-bottom: functions.rem(80);
+  @media (min-width: $xl) {
+    padding-bottom: rem(80);
   }
 
   .container {
@@ -20,17 +20,15 @@
   // .testimonials__title
 
   &__title {
-    color: variables.$white;
+    color: $white;
   }
-
-  // .testimonials__author-name
 }
 
 .testimonials-slider {
   // .testimonials-slider__wrapper
 
   &__wrapper {
-    margin-bottom: functions.rem(40);
+    margin-bottom: rem(40);
   }
 
   // .testimonials-slider__slide
@@ -40,68 +38,18 @@
     flex-direction: column;
     justify-content: space-between;
     height: auto;
-    padding: functions.rem(12);
-    background-color: variables.$white;
-    border-radius: variables.$radius;
+    padding: rem(12);
+    background-color: $white;
+    border-radius: $radius;
 
-    @media (min-width: variables.$md) {
-      padding: functions.rem(20);
+    @media (min-width: $md) {
+      padding: rem(20);
     }
 
-    @media (min-width: variables.$xl) {
-      padding: functions.rem(30);
+    @media (min-width: $xl) {
+      padding: rem(30);
     }
   }
-
-  // &-btn.swiper-button-prev,
-  // &-btn.swiper-button-next {
-  //   @media (min-width: rem(1340)) {
-  //     position: absolute;
-  //     top: 48%;
-  //     z-index: 2;
-  //     display: block;
-  //     width: rem(40);
-  //     height: rem(40);
-  //     background-color: $secondaryColor;
-  //     border-radius: 50%;
-  //     cursor: pointer;
-  //     transition: transform $transition;
-
-  //     &::after {
-  //       position: absolute;
-  //       top: 11px;
-  //       display: inline-block;
-  //       padding: rem(8);
-  //       border: solid $white;
-  //       border-width: 0 rem(2) rem(2) 0;
-  //       content: '';
-  //     }
-  //   }
-
-  //   @media (hover: hover) {
-  //     &:hover {
-  //       transform: scale(1.2);
-  //     }
-  //   }
-  // }
-
-  // &-btn.swiper-button-prev {
-  //   left: 0;
-
-  //   &::after {
-  //     left: 14px;
-  //     transform: rotate(135deg);
-  //   }
-  // }
-
-  // &-btn.swiper-button-next {
-  //   right: 0;
-
-  //   &::after {
-  //     left: 8px;
-  //     transform: rotate(-45deg);
-  //   }
-  // }
 
   .swiper-pagination {
     text-align: center;
@@ -109,12 +57,12 @@
 
   .swiper-pagination-bullet {
     display: inline-block;
-    width: functions.rem(20);
-    height: functions.rem(20);
-    border: functions.rem(2) solid variables.$white;
+    width: rem(20);
+    height: rem(20);
+    border: rem(2) solid $white;
     border-radius: 50%;
     cursor: pointer;
-    transition: transform variables.$transition;
+    transition: transform $transition;
 
     @media (hover: hover) {
       &:hover {
@@ -123,12 +71,12 @@
     }
 
     &:not(:last-child) {
-      margin-right: functions.rem(15);
+      margin-right: rem(15);
     }
   }
 
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background: variables.$secondaryColor;
+    background: $secondaryColor;
     border: none;
     opacity: 1;
   }
@@ -138,7 +86,7 @@
   &__heading {
     display: flex;
     justify-content: space-between;
-    margin-bottom: functions.rem(25);
+    margin-bottom: rem(25);
     user-select: none;
   }
 
@@ -147,19 +95,19 @@
   &__heading-title {
     font-weight: 800;
 
-    @media (min-width: variables.$md) {
-      font-size: functions.rem(18);
+    @media (min-width: $md) {
+      font-size: rem(18);
     }
 
-    @media (min-width: variables.$xl) {
-      font-size: functions.rem(20);
+    @media (min-width: $xl) {
+      font-size: rem(20);
     }
   }
 
   // .testimonials-slider__text
 
   &__text {
-    margin-bottom: functions.rem(25);
+    margin-bottom: rem(25);
     user-select: none;
   }
 
@@ -169,32 +117,32 @@
     user-select: none;
   }
 
-  // .testimonials-slider__author-row
-
   &__date-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-family: variables.$secondaryFontFamily;
-    column-gap: functions.rem(20);
-    row-gap: functions.rem(5);
+    font-family: $secondaryFontFamily;
   }
 
   &__author {
-    margin-bottom: functions.rem(6);
-    font-size: functions.rem(14);
+    margin-bottom: rem(6);
+    font-size: rem(14);
 
-    @media (min-width: variables.$xl) {
-      font-size: functions.rem(16);
+    @media (min-width: $xl) {
+      font-size: rem(16);
     }
+  }
+
+  &__town {
+    margin-top: rem(5);
   }
 
   &__town,
   &__date {
-    font-size: functions.rem(14);
+    font-size: rem(14);
 
-    @media (min-width: variables.$md) {
-      font-size: functions.rem(16);
+    @media (min-width: $md) {
+      font-size: rem(16);
     }
   }
 
@@ -203,6 +151,7 @@
   &__date {
     display: flex;
     align-items: end;
+    margin-right: rem(20);
 
     span {
       white-space: nowrap;

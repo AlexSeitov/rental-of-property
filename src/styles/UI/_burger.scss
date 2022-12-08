@@ -1,15 +1,18 @@
-@use '../base/functions';
-@use '../base/variables';
+@use '../base/functions' as *;
+@use '../base/variables' as *;
 
 .burger {
   position: relative;
   z-index: 101;
-  width: functions.rem(30);
-  height: functions.rem(26);
-  border-radius: functions.rem(5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(30);
+  height: rem(26);
+  border-radius: rem(5);
   outline: none;
 
-  @media (min-width: variables.$xl) {
+  @media (min-width: $lg) {
     display: none;
   }
 }
@@ -30,32 +33,32 @@
 .burger__btn span {
   position: absolute;
   display: block;
-  width: functions.rem(30);
-  height: functions.rem(2);
-  background-color: variables.$black;
+  width: rem(30);
+  height: rem(2);
+  background-color: $black;
   transform: rotate(0deg);
-  transition: variables.$transition;
-  transition-property: background-color, transform, width;
-}
-
-.burger_active span {
-  background-color: variables.$white;
+  transition-duration: $transition;
+  transition-property: background-color, width, transform;
 }
 
 .burger__btn span:nth-child(1) {
-  top: 0;
+  top: rem(4);
 }
 
 .burger__btn span:nth-child(2) {
-  top: functions.rem(8);
+  top: rem(12);
 }
 
 .burger__btn span:nth-child(3) {
-  top: functions.rem(8);
+  top: rem(12);
 }
 
 .burger__btn span:nth-child(4) {
-  top: functions.rem(16);
+  top: rem(20);
+}
+
+.burger_active span {
+  background-color: $white;
 }
 
 .burger_active span:nth-child(1) {

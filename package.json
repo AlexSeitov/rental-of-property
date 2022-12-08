@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "gulp startDev && webpack serve --config ./webpack.dev.js",
+    "dev": "gulp dev && webpack serve --config ./webpack.dev.js",
     "start": "gulp",
     "build": "gulp build --build",
     "htmlhint": "npx htmlhint ./src/html/*",
@@ -85,6 +85,7 @@
   },
   "dependencies": {
     "a11y-dialog": "^7.4.0",
+    "event-target-polyfill": "^0.0.3",
     "glightbox": "^3.2.0",
     "lightgallery": "^2.4.0",
     "photoswipe": "^5.2.4",

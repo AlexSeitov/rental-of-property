@@ -16,6 +16,12 @@ export default function burger(btn, nav, navLink, body) {
     navMenu.classList.remove('nav_active');
   }
 
+  function closeMenuOnOverlay(e) {
+    if (e.target == bodyPage) {
+      closeMenu();
+    }
+  }
+
   if (mobileBtn) {
     mobileBtn.addEventListener('click', toggleMenu);
   }
@@ -26,12 +32,8 @@ export default function burger(btn, nav, navLink, body) {
     });
   }
 
-  document.addEventListener('click', (e) => {
-    if (e.target.classList == 'disable-scroll') {
-      closeMenu();
-    }
-  });
-
+  document.addEventListener('click', (e) => closeMenuOnOverlay(e));
+  document.addEventListener('touchend', (e) => closeMenuOnOverlay(e));
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeMenu();

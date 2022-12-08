@@ -1,5 +1,5 @@
-@use '../../base/functions';
-@use '../../base/variables';
+@use '../../base/functions' as *;
+@use '../../base/variables' as *;
 
 .message {
   &__title {
@@ -7,19 +7,19 @@
   }
 
   &__row {
-    @media (min-width: variables.$md) {
+    @media (min-width: $md) {
       position: relative;
     }
   }
 
   &__form-wrapper {
-    @media (min-width: variables.$md) {
+    @media (min-width: $md) {
       position: absolute;
-      top: functions.rem(30);
+      top: rem(30);
       z-index: 5;
     }
 
-    @media (min-width: variables.$xl) {
+    @media (min-width: $xl) {
       top: 0;
     }
   }
@@ -29,44 +29,38 @@
   &__info {
     display: none;
 
-    @media (min-width: variables.$md) {
+    @media (min-width: $md) {
       display: block;
-      width: variables.$col-7;
+      width: $col-7;
       margin-left: auto;
-      padding: functions.rem(70) functions.rem(50);
-
-      // background-image: url('../images/icons/quotes.svg');
-      // background-repeat: no-repeat;
-      // background-size: 70px;
-      // content: "";
-      // quotes: "„" "“" "‚" "‘";
+      padding: rem(70) rem(50);
     }
   }
 
   // .message__info-text
 
   &__info-text {
-    @media (min-width: variables.$md) {
-      margin-bottom: functions.rem(30);
+    @media (min-width: $md) {
+      margin-bottom: rem(30);
     }
 
-    @media (min-width: variables.$lg) {
-      margin-bottom: functions.rem(60);
+    @media (min-width: $lg) {
+      margin-bottom: rem(60);
     }
   }
 
   // .message__info-author
 
   &__info-author {
-    margin-bottom: functions.rem(10);
-    color: variables.$primaryColor;
+    margin-bottom: rem(10);
+    color: $primaryColor;
     font-weight: 700;
-    font-family: variables.$secondaryFontFamily;
+    font-family: $secondaryFontFamily;
   }
 
   // .message__info-author-position
 
   &__info-author-position {
-    font-family: variables.$secondaryFontFamily;
+    font-family: $secondaryFontFamily;
   }
 }

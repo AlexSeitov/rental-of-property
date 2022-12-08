@@ -1,9 +1,9 @@
-@use '../base/functions';
-@use '../base/variables';
+@use '../base/functions' as *;
+@use '../base/variables' as *;
 
 .header {
   position: relative;
-  padding: functions.rem(15) 0;
+  padding: rem(15) 0;
 
   &::after {
     position: absolute;
@@ -13,18 +13,18 @@
     display: block;
     width: 45%;
     height: 100%;
-    background-color: variables.$primaryColor;
+    background-color: $primaryColor;
     content: '';
 
-    @media (min-width: variables.$md) {
-      width: 56%;
+    @media (min-width: $md) {
+      width: 58%;
     }
 
-    @media (min-width: variables.$lg) {
+    @media (min-width: $lg) {
       width: 62%;
     }
 
-    @media (min-width: variables.$xl) {
+    @media (min-width: $xl) {
       width: 52%;
     }
   }
@@ -37,27 +37,27 @@
   }
 
   &__burger {
-    margin-right: functions.rem(20);
+    margin-right: rem(20);
   }
 
   // .header__logo
 
   &__logo {
-    max-width: functions.rem(87);
+    max-width: rem(87);
     margin-right: auto;
 
-    @media (min-width: variables.$xl) {
-      min-width: functions.rem(136);
+    @media (min-width: $xl) {
+      min-width: rem(136);
     }
   }
 
   // .header__nav
 
   &__nav {
-    @media (max-width: functions.rem(1279.98)) {
+    @media (max-width: rem(1279.98)) {
       .nav__list {
-        margin-top: functions.rem(75);
-        padding-left: functions.rem(15);
+        margin-top: rem(75);
+        padding-left: rem(15);
       }
 
       // .nav__item
@@ -71,46 +71,44 @@
       // .nav__link
 
       .nav__link {
-        padding:
-          functions.rem(20) functions.rem(50) functions.rem(20)
-          functions.rem(5);
-        color: variables.$white;
-        font-size: functions.rem(18);
+        padding: rem(20) rem(50) rem(20) rem(5);
+        color: $white;
+        font-size: rem(18);
       }
     }
 
-    @media (min-width: variables.$xl) {
-      margin-right: functions.rem(52);
+    @media (min-width: $xl) {
+      margin-right: rem(52);
     }
   }
 
   // .header__email
 
   &__email {
-    margin-right: functions.rem(20);
+    margin-right: rem(20);
 
-    @media (min-width: variables.$md) {
+    @media (min-width: $md) {
       display: none;
     }
 
-    @media (min-width: variables.$lg) {
+    @media (min-width: $lg) {
       display: flex;
     }
   }
 
   &__email-icon,
   &__phone-icon {
-    fill: variables.$primaryColor;
+    fill: $primaryColor;
 
-    @media (min-width: variables.$md) {
-      margin-right: functions.rem(15);
+    @media (min-width: $md) {
+      margin-right: rem(15);
     }
   }
 
   &__social-link {
     @media (hover: hover) {
       &:hover .social-icon {
-        fill: variables.$secondaryColor;
+        fill: $secondaryColor;
       }
     }
   }
@@ -118,9 +116,9 @@
   &__email-text,
   &__phone-text {
     display: none;
-    color: variables.$white;
+    color: $white;
 
-    @media (min-width: variables.$md) {
+    @media (min-width: $md) {
       display: block;
     }
   }
@@ -130,9 +128,9 @@
   &__btn {
     display: none;
 
-    @media (min-width: variables.$md) {
+    @media (min-width: $md) {
       display: inline-block;
-      margin-left: functions.rem(40);
+      margin-left: rem(40);
     }
   }
 }

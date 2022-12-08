@@ -1,5 +1,5 @@
-@use '../../base/functions';
-@use '../../base/variables';
+@use '../../base/functions' as *;
+@use '../../base/variables' as *;
 
 .apartments {
   text-align: center;
@@ -15,15 +15,15 @@
   &__row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: functions.rem(10) functions.rem(8);
+    gap: rem(10) rem(8);
 
-    @media (min-width: variables.$md) {
-      gap: functions.rem(12);
+    @media (min-width: $md) {
+      gap: rem(12);
     }
 
-    @media (min-width: variables.$xl) {
+    @media (min-width: $xl) {
       grid-template-columns: initial;
-      gap: functions.rem(20);
+      gap: rem(20);
       text-align: initial;
     }
   }
@@ -34,9 +34,9 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-radius: variables.$radius;
+    border-radius: $radius;
     box-shadow: 0 10px 20px rgba(17, 17, 17, 10%);
-    transition: transform variables.$transition;
+    transition: transform $transition;
 
     @media (hover: hover) {
       &:hover {
@@ -45,16 +45,12 @@
       }
     }
 
-    @media (min-width: variables.$md) {
-      // padding: rem(10);
-    }
-
-    @media (min-width: variables.$xl) {
+    @media (min-width: $xl) {
       position: relative;
       padding: 0;
     }
 
-    @media (min-width: variables.$xl) {
+    @media (min-width: $xl) {
       &:nth-child(1) {
         grid-column: 1 / 5;
       }
@@ -77,31 +73,35 @@
 
   &__img {
     position: relative;
-
-    // height: rem(180);
-    margin-bottom: functions.rem(12);
+    margin-bottom: rem(12);
     padding-top: 80%;
     overflow: hidden;
-    border-radius: variables.$radius;
+    border-radius: $radius;
 
     img {
       position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       height: 100%;
       object-fit: cover;
       object-position: center;
-      inset: 0;
     }
 
-    @media (min-width: variables.$xl) {
-      height: functions.rem(300);
+    @media (min-width: $xl) {
+      height: rem(300);
       margin-bottom: 0;
       padding-top: 0;
 
       &::after {
         position: absolute;
-        background-color: rgba(variables.$black, 50%);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba($black, 50%);
         content: '';
-        inset: 0;
       }
     }
   }
@@ -109,63 +109,63 @@
   // .apartments__info
 
   &__info {
-    @media (min-width: variables.$xl) {
+    @media (min-width: $xl) {
       position: absolute;
-      right: functions.rem(10);
-      bottom: functions.rem(20);
-      left: functions.rem(40);
+      right: rem(10);
+      bottom: rem(20);
+      left: rem(40);
     }
   }
 
   // .apartments__btn
 
   &__btn {
-    margin-top: functions.rem(30);
+    margin-top: rem(30);
 
-    @media (min-width: variables.$xl) {
-      margin-top: functions.rem(60);
+    @media (min-width: $xl) {
+      margin-top: rem(60);
     }
   }
 }
 
 .info-apartments {
-  padding: 0 functions.rem(10) functions.rem(25) functions.rem(10);
+  padding: 0 rem(10) rem(25) rem(10);
 
-  @media (min-width: variables.$xl) {
-    color: variables.$white;
+  @media (min-width: $xl) {
+    color: $white;
   }
 
   // .info-apartments__title
 
   &__title {
-    margin-bottom: functions.rem(12);
+    margin-bottom: rem(12);
     font-weight: 700;
-    font-size: functions.rem(16);
-    font-family: variables.$secondaryFontFamily;
+    font-size: rem(16);
+    font-family: $secondaryFontFamily;
 
-    @media (min-width: variables.$xl) {
-      margin-bottom: functions.rem(65);
-      font-size: functions.rem(24);
+    @media (min-width: $xl) {
+      margin-bottom: rem(65);
+      font-size: rem(24);
     }
   }
 
   // .info-apartments__duration
 
   &__duration {
-    margin-bottom: functions.rem(20);
+    margin-bottom: rem(20);
     font-weight: 800;
-    font-size: functions.rem(14);
-    font-family: variables.$secondaryFontFamily;
+    font-size: rem(14);
+    font-family: $secondaryFontFamily;
 
     span {
       font-weight: 400;
     }
 
-    @media (min-width: variables.$xl) {
-      font-size: functions.rem(20);
+    @media (min-width: $xl) {
+      font-size: rem(20);
 
       span {
-        font-size: functions.rem(18);
+        font-size: rem(18);
       }
     }
   }
@@ -173,7 +173,7 @@
   // .info-apartments__row
 
   &__row {
-    @media (min-width: variables.$xl) {
+    @media (min-width: $xl) {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -184,35 +184,35 @@
   // .info-apartments__btn
 
   &__btn {
-    padding: functions.rem(10) functions.rem(20);
+    padding: rem(10) rem(20);
   }
 }
 
 .apartments-address {
   display: none;
 
-  @media (min-width: variables.$xl) {
+  @media (min-width: $xl) {
     display: flex;
   }
 
   // .apartments-address__icon
 
   &__icon {
-    width: functions.rem(22);
-    fill: variables.$secondaryColor;
+    width: rem(22);
+    fill: $secondaryColor;
 
-    @media (min-width: variables.$xl) {
-      margin-right: functions.rem(10);
+    @media (min-width: $xl) {
+      margin-right: rem(10);
     }
   }
 
   // .apartments-address__text
 
   &__text {
-    font-family: variables.$secondaryFontFamily;
+    font-family: $secondaryFontFamily;
 
-    @media (min-width: variables.$xl) {
-      font-size: functions.rem(18);
+    @media (min-width: $xl) {
+      font-size: rem(18);
     }
   }
 }

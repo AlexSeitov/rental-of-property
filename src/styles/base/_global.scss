@@ -1,5 +1,5 @@
-@use 'functions';
-@use 'variables';
+@use 'functions' as *;
+@use 'variables' as *;
 
 * {
   box-sizing: border-box;
@@ -8,15 +8,14 @@
 }
 
 body {
-  overflow-x: hidden;
-  color: variables.$black;
-  font-weight: variables.$fontWeight;
-  font-size: functions.rem(16);
-  font-family: variables.$fontFamily;
-  line-height: variables.$lineHeight;
+  color: $black;
+  font-weight: $fontWeight;
+  font-size: rem(16);
+  font-family: $fontFamily;
+  line-height: $lineHeight;
 
-  @media (min-width: variables.$lg) {
-    font-weight: variables.$fontWeight;
+  @media (min-width: $lg) {
+    font-weight: $fontWeight;
   }
 }
 
@@ -38,37 +37,46 @@ img {
 
 .page-wapper {
   position: relative;
-  max-width: functions.rem(variables.$maxWidth);
-  margin-inline: auto;
+  max-width: rem($maxWidth);
+  margin: 0 auto;
   overflow-x: hidden;
 }
 
 .container {
-  max-width: functions.rem(variables.$containerWidth);
-  margin-inline: auto;
-  padding-inline: functions.rem(15);
+  max-width: rem($containerWidth);
+  margin: 0 auto;
+  padding: 0 rem(15);
 }
 
 .section {
-  padding-top: functions.rem(50);
+  padding-top: rem(50);
 
-  @media (min-width: variables.$md) {
-    padding-top: functions.rem(60);
+  @media (min-width: $md) {
+    padding-top: rem(60);
   }
 
-  @media (min-width: variables.$xl) {
-    padding-top: functions.rem(80);
+  @media (min-width: $xl) {
+    padding-top: rem(80);
   }
 }
 
 .disable-scroll {
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
 
-  @media (max-width: functions.rem(1279.98)) {
+  @media (max-width: rem(1279.98)) {
     &::after {
       position: absolute;
       top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       width: 100%;
       height: 100vh;
       background-color: rgba(83, 83, 83, 48%);
@@ -83,17 +91,20 @@ img {
 
   &::after {
     position: absolute;
-    background-color: rgba(variables.$black, 60%);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($black, 60%);
     content: '';
-    inset: 0;
   }
 }
 
 .form-wrapper {
-  padding: functions.rem(30) functions.rem(20);
-  background-color: variables.$white;
-  border-radius: variables.$radius;
-  box-shadow: variables.$shadow;
+  padding: rem(30) rem(20);
+  background-color: $white;
+  border-radius: $radius;
+  box-shadow: $shadow;
 }
 
 .form {
@@ -104,48 +115,48 @@ img {
 
   &__input,
   &__area {
-    margin-inline: auto;
     width: 100%;
-    max-width: functions.rem(400);
-    margin-bottom: functions.rem(20);
-    padding: functions.rem(10) functions.rem(20);
-    border: variables.$inputBorder;
-    border-radius: variables.$radius;
+    max-width: rem(400);
+    margin: 0 auto rem(20);
+    padding: rem(10) rem(20);
+    border: $inputBorder;
+    border-radius: $radius;
     box-shadow: none;
 
-    @media (min-width: variables.$md) {
-      width: functions.rem(280);
+    @media (min-width: $md) {
+      width: rem(280);
     }
 
-    @media (min-width: variables.$lg) {
-      width: functions.rem(320);
+    @media (min-width: $lg) {
+      width: rem(320);
     }
 
     &::placeholder {
-      font-size: functions.rem(14);
+      font-size: rem(14);
     }
   }
 
   &__area {
-    height: functions.rem(120);
+    height: rem(120);
     resize: none;
   }
 
   &__btn {
     align-self: center;
     width: 100%;
-    max-width: functions.rem(320);
-    margin-top: functions.rem(30);
+    max-width: rem(320);
+    margin-top: rem(30);
   }
 }
 
 .rating {
-  display: flex;
-  gap: functions.rem(4);
+  display: grid;
+  grid-auto-flow: column;
+  gap: rem(4);
 
   &__icon {
-    width: functions.rem(20);
-    height: functions.rem(20);
+    width: rem(20);
+    height: rem(20);
   }
 }
 
@@ -162,16 +173,16 @@ img {
 }
 
 .social-icon {
-  width: functions.rem(30);
-  height: functions.rem(30);
-  transition: transform variables.$transition;
+  width: rem(30);
+  height: rem(30);
+  transition: transform $transition;
 
-  @media (min-width: variables.$md) {
-    width: functions.rem(40);
-    height: functions.rem(40);
+  @media (min-width: $md) {
+    width: rem(40);
+    height: rem(40);
   }
 }
 
 .social-icon_mr {
-  margin-right: functions.rem(15);
+  margin-right: rem(15);
 }

@@ -1,35 +1,33 @@
-@use '../base/functions';
-@use '../base/variables';
+@use '../base/functions' as *;
+@use '../base/variables' as *;
 
 .btn {
   display: inline-block;
-  padding: functions.rem(10) functions.rem(30);
-  color: variables.$white;
+  padding: rem(10) rem(30);
+  color: $white;
   font-weight: 700;
-  font-size: functions.rem(14);
-  background: variables.$btnBgColor;
+  font-size: rem(14);
+  background: $btnBgColor;
   border: none;
-  border-radius: functions.rem(25);
+  border-radius: rem(25);
   outline: none;
-  box-shadow: variables.$shadowBtn;
+  box-shadow: $shadowBtn;
   cursor: pointer;
-  transition:
-    color variables.$transition,
-    background-color variables.$transition;
+  transition: color $transition, background-color $transition;
 
   &:focus {
-    background: variables.$btnBgColorHover;
+    background: $btnBgColorHover;
   }
 
   @media (hover: hover) {
     &:hover {
-      background: variables.$btnBgColorHover;
+      background: $btnBgColorHover;
     }
   }
 
-  @media (min-width: variables.$xl) {
-    padding: functions.rem(15) functions.rem(30);
+  @media (min-width: $xl) {
+    padding: rem(15) rem(30);
     font-weight: 800;
-    font-size: functions.rem(16);
+    font-size: rem(16);
   }
 }
